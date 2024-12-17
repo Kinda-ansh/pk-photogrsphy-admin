@@ -47,7 +47,7 @@ router.route('/healthcheck').get(healthcheck)
 
 // ====================== || Employee Routes || ==========================
 router.route('/employee/add').post(checkAuthenticate, createEmployee)
-router.route('/employees').get(getAllEmployees)
+router.route('/employees').get(checkAuthenticate, getAllEmployees)
 router.route('/employees/:id').put(checkAuthenticate, updateEmployee)
 router.route('/employees/:id').delete(checkAuthenticate, deleteEmployee)
 
